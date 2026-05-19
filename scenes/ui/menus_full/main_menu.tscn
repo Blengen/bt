@@ -13,22 +13,18 @@
 z_index = 15
 z_as_relative = true
 
-[node name="string" parent="menu_maker" index="0" unique_id=724026993]
-text = "label§200§0,1,0.7§Breeze Trials
-label§60§0,1,0§v0.1 WIP
-button§100§1,1,1§Main Maps§main
-button§100§1,1,1§Custom Maps§custom
-button§100§1,1,1§Settings§settings
-button§100§1,1,1§Credits§credits
-
-label§50§1,1,1§ 
-button§100§1,1,1§Exit§exit"
-
 [node name="logic_handler" parent="menu_maker" index="2" unique_id=631456819]
 script = ExtResource("3_kuuhj")
 
 [node name="settings" parent="menu_maker" unique_id=2059253323 instance=ExtResource("4_b0all")]
 layout_mode = 1
+
+[node name="load_map" type="FileDialog" parent="." unique_id=763139584]
+title = "Open a File"
+file_mode = 0
+access = 2
+
+[connection signal="file_selected" from="load_map" to="menu_maker/logic_handler" method="load_file"]
 
 [editable path="menu_maker"]
 [editable path="menu_maker/settings"]

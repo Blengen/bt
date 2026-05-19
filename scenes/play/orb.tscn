@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b26mayqftvhwo"]
 
-[ext_resource type="Texture2D" uid="uid://dqnn2cjb0m73" path="res://assets/textures/orbs/none.png" id="1_gbr5m"]
 [ext_resource type="Script" uid="uid://e6trxiq7bejs" path="res://scripts/components/orb.gd" id="1_vh0f7"]
+[ext_resource type="Texture2D" uid="uid://dpfpmq1c2htgu" path="res://assets/textures/orbs/end.png" id="2_w2iap"]
+[ext_resource type="Script" uid="uid://jdlrvf30ej4p" path="res://scripts/tools/orb_type.gd" id="3_w2iap"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vh0f7"]
 radius = 2.0
@@ -9,13 +10,15 @@ radius = 2.0
 [node name="orb" type="Area3D" unique_id=1289614030 groups=["orb"]]
 monitoring = false
 script = ExtResource("1_vh0f7")
+type = "end"
 metadata/_edit_group_ = true
 
 [node name="sprite" type="Sprite3D" parent="." unique_id=1989118808]
 pixel_size = 0.03
 billboard = 1
 render_priority = 2
-texture = ExtResource("1_gbr5m")
+texture = ExtResource("2_w2iap")
+script = ExtResource("3_w2iap")
 
 [node name="collider" type="CollisionShape3D" parent="." unique_id=1827361936]
 shape = SubResource("SphereShape3D_vh0f7")

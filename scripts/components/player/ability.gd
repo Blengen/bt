@@ -30,16 +30,22 @@ func orb_hit(orb: Area3D) -> void:
 
 		"stat_speed":
 			vars.speed = value
-			update_orbs(orb)
 			put_orb_on_cooldown(orb)
-
+			
 		"stat_jump":
 			vars.jump = value
-			for child in orb.get_parent().get_children(): child.load_texture()
-			
-			update_orbs(orb)
 			put_orb_on_cooldown(orb)
-			
+
+		"stat_grav":
+			vars.grav = value
+			put_orb_on_cooldown(orb)
+
+		"teleport":
+			var tp_node: Node3D = orb.tp_node
+			player.global_position = tp_node.global_position
+			if orb.tp_fix_cam: cambase.global_rotation_degrees.y = tp_node.global_rotation_degrees.y
+			put_orb_on_cooldown(orb)
+
 		"fuel":
 			if vars.fuel >= 0:
 				vars.fuel += value
@@ -51,8 +57,10 @@ func orb_hit(orb: Area3D) -> void:
 		"end":
 			if vars.fuel >= 0: gameloop.death("Won by " + str(abs(snapped(vars.fuel, 0.001))) + "s")
 			else: gameloop.death("Off by " + str(abs(snapped(vars.fuel, 0.001))) + "s")
-				
-		
+	
+	global.emit_signal("orb_hit")
+	
+
 func put_orb_on_cooldown(orb: Area3D) -> void:
 	orb.hide()
 	orb.collider.set_deferred("disabled", true)

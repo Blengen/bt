@@ -59,11 +59,36 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.87, 0.96533334, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0.22733332, 0.44, 1)
+theme_override_colors/font_outline_color = Color(0, 0.22745098, 0.4392157, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("3_kpfyx")
 theme_override_font_sizes/font_size = 120
 text = "Map Name - ◆2.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="creators" type="Label" parent="components/pause_handler/pause_ui" unique_id=1893645596]
+z_index = 11
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -796.0
+offset_top = -387.0
+offset_right = 796.0
+offset_bottom = -331.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.4326666, 0.354, 0.59, 1)
+theme_override_colors/font_outline_color = Color(0.15400006, 0, 0.22, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_kpfyx")
+theme_override_font_sizes/font_size = 40
+text = "By Blengen, Creator, & Waowser"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -77,9 +102,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -796.0
-offset_top = -361.0
+offset_top = -323.0
 offset_right = 796.0
-offset_bottom = -305.0
+offset_bottom = -267.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -102,9 +127,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -796.0
-offset_top = -284.0
+offset_top = -267.0
 offset_right = 796.0
-offset_bottom = -228.0
+offset_bottom = -211.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -124,7 +149,7 @@ mouse_filter = 2
 
 [node name="string" parent="components/pause_handler/pause_ui/menu_maker" index="0" unique_id=724026993]
 text = "
-label§350§0,1,0§ 
+label§375§0,1,0§ 
 button§150§1,1,1§Continue§continue
 button§150§1,1,1§Settings§settings
 button§150§1,1,1§Exit§exit"
@@ -141,8 +166,14 @@ script = ExtResource("5_1phcp")
 [node name="settings" parent="components/pause_handler/pause_ui" unique_id=2059253323 instance=ExtResource("6_damvd")]
 layout_mode = 1
 
+[node name="epilepsy_warning" type="Node" parent="components" unique_id=435778364]
+
 [node name="player" parent="." unique_id=325942831 instance=ExtResource("2_3t680")]
+
+[node name="body" parent="player" index="1" unique_id=1074058138]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -10000, 0)
 
 [editable path="components/pause_handler/pause_ui/menu_maker"]
 [editable path="components/pause_handler/pause_ui/settings"]
 [editable path="components/pause_handler/pause_ui/settings/menu_maker"]
+[editable path="player"]

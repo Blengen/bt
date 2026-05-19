@@ -47,6 +47,10 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/MetaMultimeshInstance3D/plugin.cfg", "res://addons/NodeShaker3D/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 front={
@@ -153,7 +157,6 @@ back_to_spawn={
 [physics]
 
 common/physics_ticks_per_second=240
-common/max_physics_steps_per_frame=100
 common/physics_jitter_fix=0.0
 
 [rendering]

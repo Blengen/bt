@@ -38,6 +38,10 @@ func air(delta: float) -> void:
 	
 func ledge() -> void:
 	
+	# BUG This doesn't work for fixing walking along edges with walls. Not sure why
+	# (maybe the CollisionShapes are only disabled next frame)
+	# for child: CollisionShape3D in ledge_colliders: child.disabled = true
+	
 	if player.is_on_floor():
 		if ledge_colliders[0].disabled:
 			for child: CollisionShape3D in ledge_colliders: child.disabled = false

@@ -1,14 +1,25 @@
 extends Node
 
-const is_input_list: PackedStringArray = ["sens", "game_speed", "fps_cap", "music_volume", "fov", "physics_fps", "render_distance"]
-const is_bool_list: PackedStringArray = ["upp", "show_fps"]
-const is_key_list: PackedStringArray = ["w", "a", "s", "d", "jump", "quick_drop", "ability", "camlock", "zoom_in", "zoom_out", "debug"]
+const is_input_list: PackedStringArray = [
+"sens", "game_speed", "fps_cap", "music_volume", "fov","physics_fps",
+"render_distance", "current_spawn"
+]
+
+const is_bool_list: PackedStringArray = ["upp", "show_fps", "warn_files", "warn_epilepsy"]
+
+
+const is_key_list: PackedStringArray = [
+"w", "a", "s", "d", "jump", "quick_drop", "ability", "camlock", "zoom_in", "zoom_out",
+"debug", "restart"
+]
 
 const button_ids: PackedStringArray = [
 	
 "sens", "fps_cap", "game_speed", "w", "a", "s", "d", "jump",
 "quick_drop", "ability", "camlock", "zoom_in", "zoom_out", "debug", "exit_settings", "upp", "fov",
-"music_volume", "physics_fps", "show_fps", "render_distance"
+"music_volume", "physics_fps", "show_fps", "render_distance", "restart",
+"current_spawn", "warn_files", "warn_epilepsy"
+
 
 ]
 
@@ -70,7 +81,9 @@ func rebind(key: InputEvent) -> void:
 		"debug":
 			InputMap.action_erase_events("debug")
 			InputMap.action_add_event("debug", key)
-	
+		"restart":
+			InputMap.action_erase_events("restart")
+			InputMap.action_add_event("restart", key)
 
 	key_input.hide()
 	update_button_values()
@@ -91,6 +104,8 @@ func button_press(new_id: String) -> void:
 		match id:
 			"upp": settings.use_physics_process = !settings.use_physics_process
 			"show_fps": settings.show_fps = !settings.show_fps
+			"warn_files": settings.warn_files = !settings.warn_files
+			"warn_epilepsy": settings.warn_epilepsy = !settings.warn_epilepsy
 		update()
 	
 	if id == "exit_settings": $"../..".hide()
@@ -122,6 +137,9 @@ func _on_lineedit_text_submitted(val: String) -> void:
 		"physics_fps":
 			if val.is_valid_int(): Engine.physics_ticks_per_second = int(val)
 			Engine.physics_ticks_per_second = clamp(Engine.physics_ticks_per_second, 30, 10000)
+		"current_spawn":
+			if val.is_valid_int(): settings.current_spawn = int(val)
+			settings.current_spawn = clamp(settings.current_spawn, 1, 100000)
 	
 	update()
 
@@ -141,11 +159,14 @@ func update_button_values() -> void:
 			"fps_cap": button_node.text = "FPS Cap: " + str(Engine.max_fps)
 			"game_speed": button_node.text = "Game Speed: " + str(Engine.time_scale)
 			"music_volume": button_node.text = "Music Volume: " + str(settings.music_volume)
-			"upp": button_node.text = "Use Physics Process: " + str(settings.use_physics_process)
-			"show_fps": button_node.text = "Show FPS: " + str(settings.show_fps)
+			"upp": button_node.text = "Use Physics Process: " + str(settings.use_physics_process).replace("true", "On").replace("false", "Off")
+			"show_fps": button_node.text = "Show FPS: " + str(settings.show_fps).replace("true", "On").replace("false", "Off")
+			"warn_files": button_node.text = "File Safety Warning: " + str(settings.warn_files).replace("true", "On").replace("false", "Off")
+			"warn_epilepsy": button_node.text = "Photosensitive Epilepsy Warning: " + str(settings.warn_epilepsy).replace("true", "On").replace("false", "Off")
 			"fov": button_node.text = "FOV: " + str(settings.fov)
 			"render_distance": button_node.text = "Render Distance: " + str(settings.render_distance)
 			"physics_fps": button_node.text = "Physics FPS: " + str(Engine.physics_ticks_per_second)
+			"current_spawn": button_node.text = "Current Spawn: " + str(settings.current_spawn)
 			
 			"w": button_node.text = "Move Forward: " + get_key_string("front")
 			"a": button_node.text = "Move Left: " + get_key_string("left")
@@ -157,8 +178,9 @@ func update_button_values() -> void:
 			"camlock": button_node.text = "Camlock: " + get_key_string("camlock")
 			"zoom_in": button_node.text = "Zoom In: " + get_key_string("zoom_in")
 			"zoom_out": button_node.text = "Zoom Out: " + get_key_string("zoom_out")
+			"restart": button_node.text = "Restart: " + get_key_string("restart")
 			"debug": button_node.text = "Debug: " + get_key_string("debug")
-
+	
 func get_key_string(action: StringName) -> String:
 	var key: InputEvent = InputMap.action_get_events(action)[0]
 	
@@ -170,6 +192,6 @@ func get_key_string(action: StringName) -> String:
 		4: return "Wheel Up"
 		5: return "Wheel Down"
 		8: return "Back Side Button"
-		9: return "Front Side button"
+		9: return "Front Side Button"
 	
 	return "Unknown Button"

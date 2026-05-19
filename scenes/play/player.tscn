@@ -1212,21 +1212,19 @@ shape = SubResource("SeparationRayShape3D_g6oq5")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.0500002, -4.401, 0)
 shape = SubResource("SeparationRayShape3D_g6oq5")
 
-[node name="area" type="Area3D" parent="body" unique_id=1447886355]
-collision_layer = 2
-input_ray_pickable = false
+[node name="area" type="Area3D" parent="body" unique_id=1482521356]
 
-[node name="collider_main" type="CollisionShape3D" parent="body/area" unique_id=431357829]
+[node name="collider_main2" type="CollisionShape3D" parent="body/area" unique_id=1879458607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("CylinderShape3D_kptty")
 debug_color = Color(0.76862746, 0.15294118, 1, 1)
 
-[node name="collider_left" type="CollisionShape3D" parent="body/area" unique_id=2079270997]
+[node name="collider_left2" type="CollisionShape3D" parent="body/area" unique_id=2070187504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -0.5, 0)
 shape = SubResource("CylinderShape3D_say45")
 debug_color = Color(0.76862746, 0.15294118, 1, 1)
 
-[node name="collider_right" type="CollisionShape3D" parent="body/area" unique_id=1266257542]
+[node name="collider_right2" type="CollisionShape3D" parent="body/area" unique_id=1996990825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.5, 0)
 shape = SubResource("CylinderShape3D_say45")
 debug_color = Color(0.76862746, 0.15294118, 1, 1)

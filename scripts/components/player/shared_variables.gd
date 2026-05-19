@@ -15,6 +15,7 @@ var fuel: float = 0
 
 func _ready() -> void:
 	settings.settings_changed.connect(fix_vars)
+	fix_vars()
 
 func fix_vars() -> void:
 	$"../../cambase/cam".fov = settings.fov

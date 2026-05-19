@@ -34,9 +34,9 @@ func button_press(id: String) -> void: # On button pressed
 
 func _ready() -> void: # Make the menu
 	
-	
+
 	scroll.set_deferred("size", Vector2(1920, 1080)) # Reset ScrollContainer so the VBox can scale properly
-	await get_tree().process_frame
+	scroll.position = Vector2(0, 0)
 	
 	var text: PackedStringArray = $string.text.split("
 ", false) # Array of each line in the string

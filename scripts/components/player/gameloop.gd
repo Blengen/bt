@@ -7,10 +7,9 @@ extends Node
 # NODES #
 @onready var player: CharacterBody3D = $"../../body"
 @onready var fuel_label: Node = $"../fuel/label_fuel"
+@onready var spawns: Node3D = null
 
 var map_settings: Node = null
-
-var spawn: Node = null
 
 var restart_juice: float = 0 # Timer for how long restart has been pressed. Resets to 0 if key released
 
@@ -18,7 +17,7 @@ func _ready() -> void:
 	await get_tree().process_frame # Wait one frame to let the map load in
 	
 	# Define variables after the map loads
-	spawn = $"../../../map/spawn"
+	spawns = $"../../../map/spawns"
 	map_settings = $"../../../map/settings"
 	
 	await get_tree().process_frame
@@ -30,21 +29,22 @@ func _ready() -> void:
 func restart() -> void:
 	global.emit_signal("restart")
 	vars.playing = false
-	player.position = spawn.position
+	player.position = global.current_spawn.position
 	$timer_respawn.start()
 	$hihats.play("hihat_2")
 	$hihats.speed_scale = global.reverse_time_scale
 	$"../../body/visual/anim".play("RESET")
-	$"../../cambase".rotation_degrees.y = spawn.rotation_degrees.y
-	player.rotation_degrees.y = spawn.rotation_degrees.y
+	$"../../cambase".rotation_degrees.y = global.current_spawn.rotation_degrees.y
+	$"../camera".zoom(0)
+	player.rotation_degrees.y = global.current_spawn.rotation_degrees.y
 	$"../../body/visual/anim".speed_scale = 1
 	player.velocity = Vector3.ZERO
-	vars.speed = map_settings.starting_speed
-	vars.jump = map_settings.starting_jump
-	vars.grav = map_settings.starting_grav
+	vars.speed = global.current_spawn.speed
+	vars.jump = global.current_spawn.jump
+	vars.grav = global.current_spawn.grav
 
 	
-	vars.fuel = map_settings.starting_fuel
+	vars.fuel = global.current_spawn.fuel
 	fuel_label.text = str(vars.fuel)
 	$death_ui.hide()
 	
@@ -75,6 +75,7 @@ func check_for_restart(delta: float) -> void:
 		
 func death(reason: String) -> void:
 	vars.playing = false
+	global.emit_signal("death")
 	
 	$"../gameloop/death_ui".show()
 	$"../gameloop/death_ui/reason".text = reason

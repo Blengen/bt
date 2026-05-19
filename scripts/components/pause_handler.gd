@@ -13,11 +13,11 @@ func _ready() -> void:
 	await get_tree().process_frame
 	$pause_ui.hide()
 	$pause_ui/settings.hide()
-	var settings: Node = $"../../map/settings"
-	$pause_ui/map_name.text = settings.map_name + " -  ◆" + str(settings.map_difficulty)
-	$pause_ui/music.text = "Music: " + settings.music_name + " (By " + str(settings.music_composer) + ")"
-	$pause_ui/license.text = "License: " + settings.music_license
-
+	var map_settings: Node = $"../../map/settings"
+	$pause_ui/map_name.text = map_settings.map_name + " - ◆" + str(map_settings.map_difficulty)
+	$pause_ui/creators.text = "By " + map_settings.map_creators
+	$pause_ui/music.text = "Music: " + map_settings.music_name + " (By " + str(map_settings.music_composer) + ")"
+	$pause_ui/license.text = "Music License: " + map_settings.music_license
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc") and !$pause_ui/settings.visible:
