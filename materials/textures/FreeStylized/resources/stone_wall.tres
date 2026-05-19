@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://civnwiiu287ff"]
+
+[ext_resource type="Texture2D" uid="uid://cim7ldwv8br8b" path="res://materials/textures/FreeStylized/assets/brick_stone_1/stone_bricks_wall_06_color_1k.png" id="1_175xw"]
+[ext_resource type="Texture2D" uid="uid://bwp1s0varmgkf" path="res://materials/textures/FreeStylized/assets/brick_stone_1/stone_bricks_wall_06_normal_gl_1k.png" id="2_wade0"]
+
+[resource]
+albedo_color = Color(0.94666666, 0.9, 1, 1)
+albedo_texture = ExtResource("1_175xw")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("2_wade0")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://e2q1iggn8n7o"
+path="res://.godot/imported/tree_2.obj-9cadbc9127fc41f14e3155d4a65eedce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_2.obj-9cadbc9127fc41f14e3155d4a65eedce.mesh"]
+
+source_file="res://assets/3d_models/props/foliage/tree_1+2/tree_2.obj"
+dest_files=["res://.godot/imported/tree_2.obj-9cadbc9127fc41f14e3155d4a65eedce.mesh", "res://.godot/imported/tree_2.obj-9cadbc9127fc41f14e3155d4a65eedce.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=true
+generate_lightmap_uv2_texel_size=1.0
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
