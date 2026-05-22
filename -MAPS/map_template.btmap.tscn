@@ -20,6 +20,16 @@ tonemap_mode = 2
 
 [node name="map" type="Node3D" unique_id=58885349]
 
+[node name="geometry" type="Node3D" parent="." unique_id=1394966593]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="geometry" unique_id=857362011]
+use_collision = true
+size = Vector3(30, 1, 30)
+
+[node name="orbs" type="Node3D" parent="." unique_id=485182983]
+
+[node name="important" type="Node3D" parent="." unique_id=951021258]
+
 [node name="settings" type="Node" parent="." unique_id=932642946]
 script = ExtResource("1_m0yi0")
 map_difficulty = 0.0
@@ -28,23 +38,26 @@ music_volume = 0.5
 [node name="music" type="AudioStreamPlayer" parent="settings" unique_id=2103185888]
 volume_db = -5.0
 
-[node name="light" type="DirectionalLight3D" parent="settings" unique_id=1051366003]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_energy = 0.5
-shadow_enabled = true
-
 [node name="environment" type="WorldEnvironment" parent="settings" unique_id=1087979016]
 environment = SubResource("Environment_5wmdi")
 
-[node name="orbs" type="Node3D" parent="." unique_id=921069455]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="settings" unique_id=1919434657]
+transform = Transform3D(0.8480481, 0.33707014, -0.40889877, 0, 0.77162457, 0.6360783, 0.52991927, -0.53942496, 0.6543748, 0, 0, 0)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_transmittance_bias = 0.0
+shadow_blur = 0.0
+directional_shadow_split_1 = 0.15
+directional_shadow_split_2 = 0.35
+directional_shadow_split_3 = 0.8
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.925
+directional_shadow_max_distance = 50.0
+directional_shadow_pancake_size = 50.0
+sky_mode = 1
 
 [node name="spawns" type="Node3D" parent="." unique_id=1067022488]
 
 [node name="main_spawn" type="Node3D" parent="spawns" unique_id=86277857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 script = ExtResource("2_wtvft")
-
-[node name="geometry" type="Node3D" parent="." unique_id=1394966593]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="geometry" unique_id=857362011]
-size = Vector3(30, 1, 30)

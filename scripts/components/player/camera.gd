@@ -40,8 +40,14 @@ func zoom(amount: float) -> void:
 
 func align() -> void:
 	cambase.position = player.position + Vector3(0, 1.5, 0)
-	if not is_zero_approx(cam.position.z):
-		if vars.camlock: cam.position.x = 1
+	
+	if vars.camlock:
+		camlock_ui.show()
+		if cam.position.z != 0: cam.position.x = 1
+		else: cam.position.x = 0
+	else:
+		cam.position.x = 0
+		camlock_ui.hide()
 		
 
 	

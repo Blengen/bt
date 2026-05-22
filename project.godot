@@ -19,6 +19,7 @@ run/main_scene="uid://cy3wpqvx6cfpl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.266, 0.35, 0.329, 1)
 boot_splash/show_image=false
+config/icon="uid://bcfnac5kq7q1s"
 
 [autoload]
 
@@ -164,8 +165,8 @@ common/physics_jitter_fix=0.0
 textures/canvas_textures/default_texture_repeat=1
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-lights_and_shadows/directional_shadow/size=1025
-lights_and_shadows/directional_shadow/size.mobile=1025
+lights_and_shadows/directional_shadow/size=513
+lights_and_shadows/directional_shadow/size.mobile=513
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=2
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=2
 reflections/sky_reflections/texture_array_reflections=false

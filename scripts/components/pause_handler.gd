@@ -31,10 +31,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _process(_delta: float) -> void:
-	if vars.camlock:
-		cam.position.x = 1.5
-		camlock_ui.show()
-	else:
-		cam.position.x = 0
-		camlock_ui.hide()
+	if get_tree().paused:
+		if vars.camlock:
+			cam.position.x = 1.5
+			camlock_ui.show()
+		else:
+			cam.position.x = 0
+			camlock_ui.hide()
 	

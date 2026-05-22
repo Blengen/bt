@@ -16,20 +16,12 @@ extends Node
 
 @onready var music_node: AudioStreamPlayer = $music
 func _ready() -> void:
-	if !music_file: return # No music to play
-	var music_path: String = global.selected_map
-	music_path = music_path.get_base_dir()
-	music_path = music_path.path_join(music_file)
-	
-	music_node.stream = load(music_path)
 	
 	global.restart.connect(func stop_music() -> void: music_node.playing = false)
 	global.begin.connect(start_music)
 	
 	settings.settings_changed.connect(update)
 	update()
-
-
 
 func start_music() -> void:
 	music_node.seek(global.current_spawn.time)

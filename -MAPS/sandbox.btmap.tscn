@@ -22,6 +22,14 @@
 [ext_resource type="ArrayMesh" uid="uid://if6uhoes3iik" path="res://assets/3d_models/props/foliage/tree_1+2/tree_1.obj" id="19_vjsat"]
 [ext_resource type="Texture2D" uid="uid://cx8pn1qav46f" path="res://assets/3d_models/props/foliage/tree_1+2/tree_1+2.png" id="20_bq3in"]
 [ext_resource type="ArrayMesh" uid="uid://e2q1iggn8n7o" path="res://assets/3d_models/props/foliage/tree_1+2/tree_2.obj" id="21_cpnku"]
+[ext_resource type="Material" uid="uid://dltwhef8vdic4" path="res://materials/textures/FreeStylized/resources/bark.tres" id="23_h0kv1"]
+[ext_resource type="ArrayMesh" uid="uid://b0btdkm41gy11" path="res://assets/3d_models/props/structure/Pallet.obj" id="24_68dfu"]
+[ext_resource type="Material" uid="uid://bu4aheaha2rl3" path="res://materials/textures/FreeStylized/resources/metal.tres" id="25_abjc3"]
+[ext_resource type="Material" uid="uid://6tya8vwsv7xh" path="res://materials/textures/FreeStylized/resources/roof_tiles.tres" id="26_0ccjo"]
+[ext_resource type="Material" uid="uid://5gaohb3bmdjv" path="res://materials/textures/FreeStylized/resources/sand.tres" id="27_uua6r"]
+[ext_resource type="Material" uid="uid://bkfftemmgkgoy" path="res://materials/textures/FreeStylized/resources/snow.tres" id="28_lwp1s"]
+[ext_resource type="Material" uid="uid://d1sehynng20l1" path="res://materials/textures/FreeStylized/resources/wood_1.tres" id="29_tsr0l"]
+[ext_resource type="Material" uid="uid://8jr8lxheufss" path="res://materials/textures/FreeStylized/resources/wood_2.tres" id="30_hn10w"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tagcr"]
 panorama = ExtResource("2_umxor")
@@ -196,9 +204,9 @@ light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 shadow_transmittance_bias = 0.0
 shadow_blur = 0.0
-directional_shadow_split_1 = 0.25
-directional_shadow_split_2 = 0.5
-directional_shadow_split_3 = 0.75
+directional_shadow_split_1 = 0.15
+directional_shadow_split_2 = 0.35
+directional_shadow_split_3 = 0.8
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.925
 directional_shadow_pancake_size = 50.0
@@ -728,6 +736,41 @@ go_explode = null
 shape_type = 0
 go_make_colliders = null
 metadata/_custom_type_script = "uid://cpnvqsry47e8c"
+
+[node name="Pallet" type="MeshInstance3D" parent="." unique_id=1380625071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.042437, -4.558635, 30.6399)
+material_override = ExtResource("23_h0kv1")
+mesh = ExtResource("24_68dfu")
+
+[node name="Pallet2" type="MeshInstance3D" parent="." unique_id=1408910644]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 10.042437, -3.1586351, 30.6399)
+material_override = ExtResource("25_abjc3")
+mesh = ExtResource("24_68dfu")
+
+[node name="Pallet3" type="MeshInstance3D" parent="." unique_id=230395942]
+transform = Transform3D(0.96592593, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.96592593, 10.042437, -1.7586349, 30.6399)
+material_override = ExtResource("26_0ccjo")
+mesh = ExtResource("24_68dfu")
+
+[node name="Pallet4" type="MeshInstance3D" parent="." unique_id=1374672516]
+transform = Transform3D(0.9961948, 0, 0.087155744, 0, 1, 0, -0.087155744, 0, 0.9961948, 10.042437, -0.35863495, 30.6399)
+material_override = ExtResource("27_uua6r")
+mesh = ExtResource("24_68dfu")
+
+[node name="Pallet5" type="MeshInstance3D" parent="." unique_id=951242404]
+transform = Transform3D(0.9848078, 0, -0.17364818, 0, 1, 0, 0.17364818, 0, 0.9848078, 10.042437, 1.041365, 30.6399)
+material_override = ExtResource("28_lwp1s")
+mesh = ExtResource("24_68dfu")
+
+[node name="Pallet6" type="MeshInstance3D" parent="." unique_id=1270057656]
+transform = Transform3D(0.9961948, 0, -0.08715575, 0, 1, 0, 0.08715575, 0, 0.9961948, 10.042437, 2.441365, 30.6399)
+material_override = ExtResource("29_tsr0l")
+mesh = ExtResource("24_68dfu")
+
+[node name="Pallet7" type="MeshInstance3D" parent="." unique_id=1994513447]
+transform = Transform3D(0.9961948, 0, 0.08715576, 0, 1, 0, -0.08715576, 0, 0.9961948, 10.042437, 3.8413649, 30.6399)
+material_override = ExtResource("30_hn10w")
+mesh = ExtResource("24_68dfu")
 
 [connection signal="body_entered" from="orbs/orb" to="orbs/orb" method="_body_entered"]
 [connection signal="body_entered" from="orbs/orb2" to="orbs/orb2" method="_body_entered"]

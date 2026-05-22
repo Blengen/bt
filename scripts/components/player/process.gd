@@ -15,7 +15,7 @@ extends Node
 
 @onready var vars: Node = $"../shared_variables"
 
-func _process(delta: float) -> void: if !settings.use_physics_process: loops(delta)
+func _process(delta: float) -> void: if not settings.use_physics_process: loops(delta)
 func _physics_process(delta: float) -> void: if settings.use_physics_process: loops(delta)
 	
 func loops(delta: float) -> void:
@@ -36,5 +36,5 @@ func loops(delta: float) -> void:
 		
 		if vars.playing and player.velocity: player.move_and_slide()
 	
-	gameloop.check_for_restart(delta)	
+	gameloop.check_for_restart(delta)
 	camera.align()

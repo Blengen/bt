@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://btfv0h7cwxm8c" path="res://materials/textures/toon/materials/dirt.tres" id="16_rsyd8"]
 [ext_resource type="Material" uid="uid://r14u073f1klf" path="res://materials/textures/toon/materials/ground.tres" id="17_q37mx"]
 [ext_resource type="Material" uid="uid://dlffrfn5op6n4" path="res://materials/textures/toon/materials/sand.tres" id="18_3js8a"]
+[ext_resource type="Texture2D" uid="uid://b6ufyrmdncbar" path="res://assets/textures/decals/box.webp" id="19_5yu6n"]
 [ext_resource type="Texture2D" uid="uid://caow67d0qmmaw" path="res://assets/textures/ui/icons/star.webp" id="19_ad5mg"]
 [ext_resource type="Texture2D" uid="uid://d00kursin0f1x" path="res://materials/textures/toon/assets/x256/metal_plate.png" id="19_fsohj"]
 [ext_resource type="Texture2D" uid="uid://2x77qjfskyvr" path="res://assets/3d_models/props/foliage/bush_1/diffuse.tga" id="20_g6wh1"]
@@ -69,17 +70,9 @@ alpha_antialiasing_mode = 0
 blend_mode = 1
 albedo_color = Color(1, 1, 1, 0)
 
-[sub_resource type="Gradient" id="Gradient_gma6m"]
-offsets = PackedFloat32Array(0, 0.5423729, 0.83898306, 0.84745765, 1)
-colors = PackedColorArray(0.52, 0.34484664, 0.2756, 1, 0.4786594, 0.21755534, 0.17542276, 1, 0.7200549, 0.46273404, 0.30658904, 1, 0.48, 0.264, 0.12, 1, 0.31443375, 0.164538, 0.06428813, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_r17ur"]
-gradient = SubResource("Gradient_gma6m")
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umxor"]
-albedo_texture = SubResource("GradientTexture2D_r17ur")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdx8b"]
+albedo_color = Color(0.41, 0.2624, 0.114799984, 1)
+albedo_texture = ExtResource("19_5yu6n")
 
 [sub_resource type="Gradient" id="Gradient_r17ur"]
 colors = PackedColorArray(0.89059, 0.89059, 0.8905901, 1, 1, 1, 1, 1)
@@ -97,6 +90,14 @@ color_ramp = SubResource("Gradient_r17ur")
 transparency = 1
 blend_mode = 3
 albedo_texture = SubResource("NoiseTexture2D_tagcr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3nob"]
+albedo_color = Color(0.45, 0.29880002, 0.12599999, 1)
+albedo_texture = ExtResource("19_5yu6n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjuvg"]
+albedo_color = Color(0.33889872, 0.2128258, 0.08657604, 1)
+albedo_texture = ExtResource("19_5yu6n")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xku7o"]
 diffuse_mode = 3
@@ -1134,22 +1135,20 @@ smooth_faces = false
 
 [node name="CSGBox3D32" type="CSGBox3D" parent="geometry" unique_id=887839649]
 transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 19.707106, 4.3, -2.7752552)
-material_override = SubResource("StandardMaterial3D_umxor")
+material_override = SubResource("StandardMaterial3D_xdx8b")
 material_overlay = SubResource("StandardMaterial3D_7wus8")
 use_collision = true
 size = Vector3(7, 7, 7)
 
 [node name="CSGBox3D33" type="CSGBox3D" parent="geometry" unique_id=226260582]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 19.707106, 4.3, 5.524745)
-material_override = SubResource("StandardMaterial3D_umxor")
-material_overlay = SubResource("StandardMaterial3D_7wus8")
+material_override = SubResource("StandardMaterial3D_s3nob")
 use_collision = true
 size = Vector3(7, 7, 7)
 
 [node name="CSGBox3D34" type="CSGBox3D" parent="geometry" unique_id=1439825383]
 transform = Transform3D(0.96592593, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.96592593, 21.707106, 11.3, 1.524745)
-material_override = SubResource("StandardMaterial3D_umxor")
-material_overlay = SubResource("StandardMaterial3D_7wus8")
+material_override = SubResource("StandardMaterial3D_xjuvg")
 use_collision = true
 size = Vector3(7, 7, 7)
 

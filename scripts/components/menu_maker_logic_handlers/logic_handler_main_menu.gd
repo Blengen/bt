@@ -78,11 +78,26 @@ button§100§1,1,1§Back§back
 label§200§0,0.5,1§Credits
 label§50§0.8,0.8,0.8§Based on Flood Escape 2 by Crazyblox
 label§50§0.8,0.8,0.8§Made in Godot Engine
-label§100§1,1,1§Category 1
-label§50§1,1,1§Nothing yet lel
+
+label§100§1,1,1§Tools
+button§75§1,1,1§Krita (Raster Editor)§url_https://krita.org
+button§75§1,1,1§Inkscape (Vector Editor)§url_https://inkscape.org
+
+label§100§1,1,1§Materials
+button§75§1,1,1§FreeStylized§url_https://freestylized.com/
+button§75§1,1,1§AmbientCG§url_https://https://ambientcg.com/
+
+label§100§1,1,1§Assets
+button§75§1,1,1§OpenGameArt§url_https://opengameart.org
+label§35§0.8,0.8,0.8§A full list of all assets from OpenGameArt can be found on GitHub
+
+label§100§1,1,1§Featured Map Makers
+button§75§1,1,1§UselessThing (High Ridge)§url_https://www.youtube.com/@UselessThing77
 
 label§50§1,1,1§ 
+label§50§0.8,0.8,0.8§Probably forgot a bunch of things lol
 button§100§1,1,1§Back§back
+label§50§1,1,1§ 
 "
 		menu_maker._ready()
 
@@ -131,8 +146,18 @@ button§100§1,1,1§I understand§warn_files
 		
 	elif id == "epilepsy_anyway": get_tree().change_scene_to_file("res://scenes/play/play.tscn")
 
+	elif id.begins_with("url_"): OS.shell_open(id.trim_prefix("url_"))
+
+
+
+
+
+
+
+
 
 func load_file(path: String) -> void:
+	if path == "": return
 	global.selected_map = path
 	if settings.warn_epilepsy == false: get_tree().change_scene_to_file("res://scenes/play/play.tscn")
 	else:

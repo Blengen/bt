@@ -1,16 +1,16 @@
 [gd_scene format=4 uid="uid://dk82p54w5vwnx"]
 
 [ext_resource type="Script" uid="uid://cqklbtk30lpju" path="res://scripts/components/map_settings.gd" id="1_qx7ak"]
-[ext_resource type="AudioStream" uid="uid://b3ejjtpm4wf2o" path="res://-MAPS/Jevil Theme v1.ogg" id="2_wla6e"]
+[ext_resource type="AudioStream" uid="uid://b3ejjtpm4wf2o" path="res://assets/audio/map_music/Jevil Theme v1.ogg" id="2_wla6e"]
 [ext_resource type="Script" uid="uid://8blh88ll7jm4" path="res://scripts/components/map_animation.gd" id="3_oxi2k"]
 [ext_resource type="PackedScene" uid="uid://b26mayqftvhwo" path="res://scenes/play/orb.tscn" id="4_p7om0"]
 [ext_resource type="Texture2D" uid="uid://cu6c60dcpftt4" path="res://assets/textures/orbs/stat_speed.png" id="5_s5cbv"]
-[ext_resource type="Texture2D" uid="uid://b27rteewpahub" path="res://materials/textures/FreeStylized/assets/concrete_1/concrete_wall_03_color_1k.png" id="6_yqspw"]
-[ext_resource type="Texture2D" uid="uid://cooot2k2d732c" path="res://materials/textures/FreeStylized/assets/concrete_1/concrete_wall_03_normal_gl_1k.png" id="7_16mmw"]
-[ext_resource type="Material" uid="uid://darkxaiwqmb3j" path="res://materials/textures/FreeStylized/resources/concrete_1.tres" id="8_jje1n"]
+[ext_resource type="Texture2D" uid="uid://b27rteewpahub" path="res://materials/textures/FreeStylized/assets/concrete/concrete_wall_03_color_1k.png" id="6_yqspw"]
+[ext_resource type="Texture2D" uid="uid://cooot2k2d732c" path="res://materials/textures/FreeStylized/assets/concrete/concrete_wall_03_normal_gl_1k.png" id="7_16mmw"]
+[ext_resource type="Material" uid="uid://darkxaiwqmb3j" path="res://materials/textures/FreeStylized/resources/concrete.tres" id="8_jje1n"]
 [ext_resource type="Material" uid="uid://d3dexafmnbcmc" path="res://materials/textures/toon/materials/metal_plate.tres" id="9_0rkt0"]
 [ext_resource type="Material" uid="uid://yf8bn3o7q57n" path="res://materials/textures/toon/materials/stone_brick.tres" id="10_nf4l8"]
-[ext_resource type="Material" uid="uid://dv2mehmepxkjq" path="res://materials/textures/FreeStylized/resources/rock_1.tres" id="11_l5jmd"]
+[ext_resource type="Material" uid="uid://dv2mehmepxkjq" path="res://materials/textures/FreeStylized/resources/rock.tres" id="11_l5jmd"]
 [ext_resource type="Texture2D" uid="uid://b2q4s8l4j1evq" path="res://materials/textures/FreeStylized/assets/wood_2/wood_planks_22_basecolor_1k.png" id="12_8tkhi"]
 [ext_resource type="Texture2D" uid="uid://cp8ygks3iyt2v" path="res://materials/textures/FreeStylized/assets/wood_2/wood_planks_22_normal_gl_1k.png" id="13_qob78"]
 [ext_resource type="Material" uid="uid://civnwiiu287ff" path="res://materials/textures/FreeStylized/resources/stone_wall.tres" id="14_oxtyw"]
@@ -18,8 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://8fu2n58cg7ln" path="res://materials/textures/toon/assets/x256/grass.jpg" id="16_auwow"]
 [ext_resource type="Texture2D" uid="uid://b1dy7mi8c7hpi" path="res://materials/textures/toon/assets/x256/brick.png" id="17_lar8l"]
 [ext_resource type="Script" uid="uid://cpnvqsry47e8c" path="res://addons/MetaMultimeshInstance3D/src/MetaMultimeshInstance3D.gd" id="18_7ex2e"]
-[ext_resource type="Texture2D" uid="uid://74j2dpvfihuo" path="res://materials/textures/FreeStylized/assets/sand_1/sand_04_color_1k.png" id="19_3wwku"]
-[ext_resource type="Texture2D" uid="uid://b7exe4ug2ut0h" path="res://materials/textures/FreeStylized/assets/sand_1/sand_04_normal_gl_1k.png" id="20_7533i"]
+[ext_resource type="Texture2D" uid="uid://74j2dpvfihuo" path="res://materials/textures/FreeStylized/assets/sand/sand_04_color_1k.png" id="19_3wwku"]
+[ext_resource type="Texture2D" uid="uid://b7exe4ug2ut0h" path="res://materials/textures/FreeStylized/assets/sand/sand_04_normal_gl_1k.png" id="20_7533i"]
 [ext_resource type="Texture2D" uid="uid://d00kursin0f1x" path="res://materials/textures/toon/assets/x256/metal_plate.png" id="21_smqpe"]
 [ext_resource type="ArrayMesh" uid="uid://c1cvynrqlc5u7" path="res://assets/3d_models/props/unsorted/crack.obj" id="22_xntn6"]
 [ext_resource type="Script" uid="uid://stwrbvlwkd6" path="res://scripts/components/spawn.gd" id="23_0xhs3"]
@@ -88,7 +88,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_c1d5p"]
 resource_name = "pulsing"
-length = 62.0
+length = 65.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -136,7 +136,7 @@ tracks/3/path = NodePath("../../important/ShatteredCylinder:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 61.63249),
+"times": PackedFloat32Array(0, 65),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0.87266463, 0), Vector3(52.35988, 0.87266463, 0)]
@@ -148,7 +148,7 @@ tracks/4/path = NodePath("../../important/ShatteredCylinder2:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 61.644333),
+"times": PackedFloat32Array(0, 65),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(1.3374923e-15, 0.8726646, -1.5707964), Vector3(0, 88.13913, -1.5707964)]
@@ -518,6 +518,7 @@ music_license = "CC0 (Public Domain)"
 warn_epilepsy = true
 
 [node name="music" type="AudioStreamPlayer" parent="settings" unique_id=1158848838]
+stream = ExtResource("2_wla6e")
 volume_db = -5.0
 
 [node name="environment" type="WorldEnvironment" parent="settings" unique_id=1718300355]
@@ -2386,6 +2387,10 @@ visibility_aabb = AABB(-4, -4, -4, 500, 8, 8)
 transform_align = 2
 process_material = SubResource("ParticleProcessMaterial_fpcwi")
 draw_pass_1 = SubResource("QuadMesh_dqauv")
+
+[node name="decals" type="Node3D" parent="geometry" unique_id=690731779]
+
+[node name="Sprite3D" type="Sprite3D" parent="geometry/decals" unique_id=1630985367]
 
 [node name="spawns" type="Node3D" parent="." unique_id=924505247]
 
