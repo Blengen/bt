@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://8jr8lxheufss"]
+
+[ext_resource type="Texture2D" uid="uid://b2q4s8l4j1evq" path="res://materials/textures/FreeStylized/assets/wood_2/wood_planks_22_basecolor_1k.png" id="1_ermno"]
+[ext_resource type="Texture2D" uid="uid://cp8ygks3iyt2v" path="res://materials/textures/FreeStylized/assets/wood_2/wood_planks_22_normal_gl_1k.png" id="2_34ot0"]
+
+[resource]
+albedo_color = Color(0.72, 0.54528004, 0.34560004, 1)
+albedo_texture = ExtResource("1_ermno")
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_34ot0")
+uv1_scale = Vector3(0.35, 0.35, 0.35)
+uv1_triplanar = true

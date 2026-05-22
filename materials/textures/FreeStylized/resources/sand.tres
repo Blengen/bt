@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5gaohb3bmdjv"]
+
+[ext_resource type="Texture2D" uid="uid://74j2dpvfihuo" path="res://materials/textures/FreeStylized/assets/sand/sand_04_color_1k.png" id="1_r2lpn"]
+[ext_resource type="Texture2D" uid="uid://b7exe4ug2ut0h" path="res://materials/textures/FreeStylized/assets/sand/sand_04_normal_gl_1k.png" id="2_wy4m7"]
+
+[resource]
+albedo_color = Color(0.8306124, 0.53163964, 0.31249943, 1)
+albedo_texture = ExtResource("1_r2lpn")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("2_wy4m7")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkfftemmgkgoy"]
+
+[ext_resource type="Texture2D" uid="uid://d1ceg5qp4v6d" path="res://materials/textures/FreeStylized/assets/snow/snow_01_color_1k.png" id="1_dnye6"]
+[ext_resource type="Texture2D" uid="uid://c8jjnoyvxykn5" path="res://materials/textures/FreeStylized/assets/snow/snow_01_normal_gl_1k.png" id="2_6nlek"]
+
+[resource]
+albedo_color = Color(0.7162962, 0.7162962, 0.7162962, 1)
+albedo_texture = ExtResource("1_dnye6")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("2_6nlek")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true

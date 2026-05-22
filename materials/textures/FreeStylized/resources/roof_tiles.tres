@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6tya8vwsv7xh"]
+
+[ext_resource type="Texture2D" uid="uid://dspblne2x4to2" path="res://materials/textures/FreeStylized/assets/roof/roof_tiles_10_basecolor_1k.png" id="1_7tbxk"]
+[ext_resource type="Texture2D" uid="uid://d1fxgccbewh47" path="res://materials/textures/FreeStylized/assets/roof/roof_tiles_10_normal_gl_1k.png" id="2_e8h88"]
+
+[resource]
+albedo_color = Color(0.89, 0.6586, 0.6586, 1)
+albedo_texture = ExtResource("1_7tbxk")
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource("2_e8h88")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+uv1_triplanar = true
