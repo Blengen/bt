@@ -1,0 +1,13 @@
+This file includes a list of links to assets used, of which were not listed in the Credits menu
+All assets listed here are CC0 (Public Domain), and may be used however, and without credit.
+
+I will preface each link with a very short summary
+
+Skyboxes -/- https://opengameart.org/content/cloudy-skyboxes-0
+Stylized Skybox -/- https://freestylized.com/skybox/sky_clouds_06/
+Trees -/- https://opengameart.org/content/tree-5
+Bush -/- https://opengameart.org/content/bushes
+Grass Texture -/- https://opengameart.org/content/awesome-seamless-grass-texture
+
+I lowkey forgot where I got the pallet from (my bad :sob:) but here's a very similar one:
+	https://opengameart.org/content/wood-pallet-v1-pack

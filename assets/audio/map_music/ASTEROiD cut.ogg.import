@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c25gbtap55sqn"
+path="res://.godot/imported/ASTEROiD cut.ogg-7903b2bab4998d3c78b3268a37b7bf53.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/map_music/ASTEROiD cut.ogg"
+dest_files=["res://.godot/imported/ASTEROiD cut.ogg-7903b2bab4998d3c78b3268a37b7bf53.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
