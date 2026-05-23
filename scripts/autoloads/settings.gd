@@ -1,6 +1,6 @@
 extends Node
 
-var file_path: String = "res://settings.cfg"
+var file_path: String = "res://bt_settings"
 
 # GAMEPLAY SETTINGS #
 var current_spawn: int = 1
@@ -25,7 +25,7 @@ var music_volume: float = 1
 signal settings_changed
 
 func _ready() -> void:
-	if not OS.has_feature("editor"): file_path = OS.get_executable_path().path_join("settings.cfg")
+	if not OS.has_feature("editor"): file_path = "user://bt_settings.cfg"
 	load_settings()
 	save_settings()
 
@@ -61,9 +61,10 @@ func save_settings() -> void:
 	file.set_value("keybinds", "debug", InputMap.action_get_events("debug")[0])
 	file.set_value("keybinds", "restart", InputMap.action_get_events("restart")[0])
 	
-	file.save(file_path)
+	var save_err: Error = file.save(file_path)
+	if save_err: print(error_string(save_err))
 
-func load_settings() -> void:
+func load_settings() -> void: # Some of this is written by DeepSeek.
 	if FileAccess.file_exists(file_path):
 		var file: ConfigFile = ConfigFile.new()
 		var load_error: Error = file.load(file_path)

@@ -12,6 +12,9 @@ NodeShaker3D (Addon, res://addons/NodeShaker3D)
 
 [-Permission from Creator-]
 High Ridge (Map, res://-MAPS/high_ridge.btmap.tscn)
+
+[-MUSIC-]
+ASTEROiD (By Namice and Soutfast) -> Creative Commons Attribution 3.0
 --------------------------------------------------------------------------------
 
 Below is a copy of the CC0 license from Creative Commons.

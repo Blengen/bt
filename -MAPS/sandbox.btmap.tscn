@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b26mayqftvhwo" path="res://scenes/play/orb.tscn" id="1_igy5f"]
 [ext_resource type="Script" uid="uid://cqklbtk30lpju" path="res://scripts/components/map_settings.gd" id="1_r17ur"]
 [ext_resource type="Material" uid="uid://yf8bn3o7q57n" path="res://materials/textures/toon/materials/stone_brick.tres" id="2_gma6m"]
-[ext_resource type="Texture2D" uid="uid://cr0rfb62v0ddv" path="res://assets/textures/skyboxes/768x384/pink_sunset.webp" id="2_umxor"]
+[ext_resource type="Texture2D" uid="uid://cr0rfb62v0ddv" path="res://assets/textures/skyboxes/pink_sunset.webp" id="2_umxor"]
 [ext_resource type="Material" uid="uid://d3dexafmnbcmc" path="res://materials/textures/toon/materials/metal_plate.tres" id="3_r17ur"]
 [ext_resource type="Script" uid="uid://stwrbvlwkd6" path="res://scripts/components/spawn.gd" id="4_0bfti"]
 [ext_resource type="Material" uid="uid://dxp3rg6j5ddgf" path="res://materials/special/materials/hidden.tres" id="4_umxor"]
@@ -187,7 +187,6 @@ map_name = "Sandbox"
 map_creators = "Blengen"
 map_difficulty = 0.0
 music_name = "Some Blengen soundtrack"
-music_file = ""
 music_composer = "Blengen"
 music_license = "CC0"
 

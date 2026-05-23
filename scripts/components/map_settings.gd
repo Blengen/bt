@@ -8,7 +8,6 @@ extends Node
 # MUSIC_INFO #
 @export var music_name: String = ""
 @export var music_volume: float = 1
-@export var music_file: String = ".mp3"
 @export var music_composer: String = ""
 @export var music_license: String = "CC"
 

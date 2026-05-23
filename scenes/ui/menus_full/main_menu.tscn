@@ -20,9 +20,16 @@ script = ExtResource("3_kuuhj")
 layout_mode = 1
 
 [node name="load_map" type="FileDialog" parent="." unique_id=763139584]
+oversampling_override = 1.0
 title = "Open a File"
+position = Vector2i(40, 70)
+size = Vector2i(1839, 966)
+theme_override_colors/folder_icon_color = Color(0.58000004, 1, 0.902, 1)
+theme_override_colors/file_icon_color = Color(0.04000002, 0.39200014, 1, 1)
 file_mode = 0
 access = 2
+filters = PackedStringArray("*.btmap.tscn")
+show_hidden_files = true
 
 [connection signal="file_selected" from="load_map" to="menu_maker/logic_handler" method="load_file"]
 

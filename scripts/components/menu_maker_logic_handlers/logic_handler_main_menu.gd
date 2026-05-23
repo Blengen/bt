@@ -9,6 +9,7 @@ func _ready() -> void:
 	$"../settings".hide()
 	button_press("back")
 	
+	if not OS.has_feature("editor"): return
 	var current_files: PackedStringArray = DirAccess.open("res://-MAPS/-CURRENT/").get_files()
 	var current_files_map: String = ""
 	for file: String in current_files:
@@ -26,7 +27,7 @@ func button_press(id: String) -> void:
 		menu_maker.erase()
 		string.text = "
 label§200§0,1,0.7§Breeze Trials
-label§60§0,1,0§v0.1 WIP
+label§60§0,1,0§v1.0.1
 button§100§1,1,1§Main Maps§main
 button§100§1,1,1§Custom Maps§load_map
 button§100§1,1,1§Settings§settings

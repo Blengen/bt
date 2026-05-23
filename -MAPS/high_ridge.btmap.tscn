@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bmdjyto3xfftv"]
 
 [ext_resource type="Script" uid="uid://cqklbtk30lpju" path="res://scripts/components/map_settings.gd" id="1_ej82n"]
-[ext_resource type="Texture2D" uid="uid://cr0rfb62v0ddv" path="res://assets/textures/skyboxes/768x384/pink_sunset.webp" id="2_fsohj"]
+[ext_resource type="Texture2D" uid="uid://cr0rfb62v0ddv" path="res://assets/textures/skyboxes/pink_sunset.webp" id="2_fsohj"]
+[ext_resource type="AudioStream" uid="uid://c25gbtap55sqn" path="res://assets/audio/map_music/ASTEROiD cut.ogg" id="2_xdx8b"]
 [ext_resource type="PackedScene" uid="uid://b26mayqftvhwo" path="res://scenes/play/orb.tscn" id="3_xku7o"]
 [ext_resource type="Texture2D" uid="uid://cu6c60dcpftt4" path="res://assets/textures/orbs/stat_speed.png" id="4_amewb"]
 [ext_resource type="Texture2D" uid="uid://cqs5h28vqkoe" path="res://assets/textures/orbs/jump.png" id="5_3fuoa"]
@@ -19,7 +20,6 @@
 [ext_resource type="Material" uid="uid://r14u073f1klf" path="res://materials/textures/toon/materials/ground.tres" id="17_q37mx"]
 [ext_resource type="Material" uid="uid://dlffrfn5op6n4" path="res://materials/textures/toon/materials/sand.tres" id="18_3js8a"]
 [ext_resource type="Texture2D" uid="uid://b6ufyrmdncbar" path="res://assets/textures/decals/box.webp" id="19_5yu6n"]
-[ext_resource type="Texture2D" uid="uid://caow67d0qmmaw" path="res://assets/textures/ui/icons/star.webp" id="19_ad5mg"]
 [ext_resource type="Texture2D" uid="uid://d00kursin0f1x" path="res://materials/textures/toon/assets/x256/metal_plate.png" id="19_fsohj"]
 [ext_resource type="Texture2D" uid="uid://2x77qjfskyvr" path="res://assets/3d_models/props/foliage/bush_1/diffuse.tga" id="20_g6wh1"]
 [ext_resource type="ArrayMesh" uid="uid://b2ioctacfvhr4" path="res://assets/3d_models/props/foliage/bush_1/bush_01.obj" id="21_o54eh"]
@@ -107,6 +107,9 @@ albedo_texture = ExtResource("19_fsohj")
 uv1_scale = Vector3(0.4, 0.4, 0.4)
 uv1_triplanar = true
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5yu6n"]
+load_path = "res://.godot/imported/star.webp-7dad167d04cce0866ba7c17a97c59732.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hy6o"]
 transparency = 2
 alpha_scissor_threshold = 0.9
@@ -163,12 +166,12 @@ script = ExtResource("1_ej82n")
 map_name = "High Ridge"
 map_creators = "UselessThing (Polished by Blengen)"
 map_difficulty = 2.5
-music_name = "Some Blengen soundtrack"
-music_file = ""
-music_composer = "Blengen"
-music_license = "CC0"
+music_name = "ASTEROiD"
+music_composer = "Namice & Soutfast"
+music_license = "Creative Commons - Attribution (3.0)"
 
 [node name="music" type="AudioStreamPlayer" parent="settings" unique_id=2103185888]
+stream = ExtResource("2_xdx8b")
 volume_db = -5.0
 
 [node name="environment" type="WorldEnvironment" parent="settings" unique_id=537311252]
@@ -1164,7 +1167,7 @@ size = Vector3(6, 2, 1)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 49, 35, 37)
 pixel_size = 0.1
 billboard = 1
-texture = ExtResource("19_ad5mg")
+texture = SubResource("CompressedTexture2D_5yu6n")
 
 [node name="MetaMultimeshInstance3D3" type="MultiMeshInstance3D" parent="." unique_id=881586942]
 material_override = SubResource("StandardMaterial3D_0hy6o")
